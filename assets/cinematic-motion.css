@@ -1,0 +1,37 @@
+/* CINEMATIC MOTION SYSTEM — preserves the original-vision composition */
+:root{--motion-intensity:1}
+.motion-sky{position:absolute;inset:0;z-index:2;width:100%;height:100%;pointer-events:none;mix-blend-mode:screen;opacity:.9}
+.cinematic-light{position:absolute;inset:-20%;z-index:1;pointer-events:none;background:radial-gradient(ellipse 33% 42% at 76% 30%,#b5ddff2b,transparent 80%),radial-gradient(ellipse 25% 36% at 80% 58%,#8a7bff22,transparent 82%),radial-gradient(ellipse 22% 25% at 51% 88%,#f5a76813,transparent 80%);mix-blend-mode:screen;animation:lightBreathe 12s ease-in-out infinite alternate}
+.cinematic-vignette{position:absolute;inset:0;z-index:3;pointer-events:none;background:radial-gradient(ellipse at 65% 42%,transparent 30%,#01071242 100%)}
+.hero-copy,.island-label,.bottom-line,.vision-rail{z-index:6}
+.world-aura{position:absolute;top:9%;left:64%;width:33vw;height:33vw;max-width:510px;max-height:510px;border-radius:50%;pointer-events:none;z-index:2;opacity:.16;background:radial-gradient(circle,#83deff8b 0%,#a1e9ff2d 40%,transparent 70%);filter:blur(55px);animation:lightBreathe 9s ease-in-out infinite alternate}
+.portal-gate{position:absolute;z-index:4;pointer-events:none;left:53.9%;top:45%;width:7.6%;aspect-ratio:1;border:1px solid #bcfaff6b;border-radius:50%;box-shadow:0 0 20px #a2faff42,inset 0 0 27px #8dc7ff29;animation:portalBreath 5s ease-in-out infinite}
+.portal-gate:before,.portal-gate:after{content:'';position:absolute;inset:-12%;border:1px solid #a7b4ff50;border-radius:50%;animation:portalSpin 13s linear infinite}
+.portal-gate:after{inset:-34%;border-style:dashed;border-color:#87cfff36;animation-direction:reverse;animation-duration:24s}
+.skyline-shimmer{position:absolute;z-index:2;inset:45% 0 14%;pointer-events:none;background:linear-gradient(90deg,transparent 10%,#c1e7ff11 37%,transparent 55%,#b28fff0c 79%,transparent 90%);filter:blur(35px);animation:lightBreathe 8s ease-in-out infinite alternate}
+.universe-art{will-change:transform;transition:transform .18s ease-out}
+.island-label{transition:filter .3s,text-shadow .3s;cursor:default}.island-label:hover{filter:brightness(1.35);text-shadow:0 0 15px #91e9ff}
+.nav-scroll-progress{position:fixed;z-index:80;inset:0 auto auto 0;height:2px;width:0;background:linear-gradient(90deg,#64dcff,#bc91ff,#f6c38b);box-shadow:0 0 18px #9fdaff;pointer-events:none}
+.cursor-light{position:fixed;inset:0 auto auto 0;z-index:10;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,#8ddaff12,transparent 70%);pointer-events:none;transform:translate3d(-500px,-500px,0);will-change:transform;mix-blend-mode:screen}
+.detail,.impact-card,.shelf-book,.fiction-card,.deck-card{transform-style:preserve-3d;backface-visibility:hidden}
+.motion-enhanced .detail,.motion-enhanced .impact-card,.motion-enhanced .shelf-book,.motion-enhanced .fiction-card{transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .35s,border-color .35s}
+.motion-enhanced .detail:hover,.motion-enhanced .impact-card:hover,.motion-enhanced .shelf-book:hover,.motion-enhanced .fiction-card:hover{box-shadow:0 24px 65px #0008,0 0 28px #3eabff16}
+.motion-enhanced .pill{position:relative;overflow:hidden;isolation:isolate}
+.motion-enhanced .pill:before{content:'';position:absolute;inset:-40% auto -40% -100%;width:50%;transform:skewX(-20deg);background:linear-gradient(90deg,transparent,#ffffff34,transparent);transition:left .65s cubic-bezier(.2,.8,.2,1);pointer-events:none;z-index:-1}
+.motion-enhanced .pill:hover:before{left:150%}
+.metric strong{font-variant-numeric:tabular-nums}.metric .glyph{animation:glyphFloat 5s ease-in-out infinite}.metric:nth-child(2) .glyph{animation-delay:-1.2s}.metric:nth-child(3) .glyph{animation-delay:-2.5s}
+.tech-orbit{animation:orbitGlow 7s ease-in-out infinite}.tech-orbit:before{animation:portalSpin 38s linear infinite}.tech-orbit:after{animation:portalSpin 25s linear infinite reverse}
+.impact-mark{animation:glyphFloat 6s ease-in-out infinite}
+.fiction-card:before{content:'';position:absolute;z-index:0;right:-20%;top:-30%;width:260px;height:260px;border:1px solid #a4d9ff3a;border-radius:50%;box-shadow:0 0 0 34px #9ddcff08,0 0 0 70px #c8b5ff08;pointer-events:none;animation:orbitGlow 9s ease-in-out infinite}
+.fiction-card>*{position:relative;z-index:1}
+.motion-control{position:fixed;z-index:75;right:20px;bottom:20px;display:flex;gap:8px;align-items:center;border:1px solid #83caff72;border-radius:100px;background:#071829d9;color:#d4eeff;padding:10px 14px;font:700 10px 'DM Sans',sans-serif;letter-spacing:.08em;box-shadow:0 8px 35px #0008;backdrop-filter:blur(14px)}
+.motion-control:hover{border-color:#9ee9ff}
+.motion-control .motion-dot{width:7px;height:7px;border-radius:50%;background:#7cf4e5;box-shadow:0 0 12px #7cf4e5}
+.motion-control[aria-pressed="false"] .motion-dot{background:#86919d;box-shadow:none}
+@keyframes lightBreathe{from{opacity:.55;transform:scale(1) translateY(0)}to{opacity:1;transform:scale(1.08) translateY(-9px)}}
+@keyframes portalBreath{50%{box-shadow:0 0 42px #a2faff8c,inset 0 0 49px #87aaff6b;transform:scale(1.05)}}
+@keyframes portalSpin{to{transform:rotate(360deg)}}
+@keyframes orbitGlow{50%{box-shadow:inset 0 0 45px #186ebaa1,0 0 60px #5daaff54;filter:brightness(1.15)}}
+@keyframes glyphFloat{50%{transform:translateY(-6px);filter:drop-shadow(0 0 10px #76cfff66)}}
+@media(max-width:900px){.portal-gate{display:none}.motion-sky{opacity:.65}.cursor-light{display:none}.motion-control{bottom:12px;right:12px;font-size:9px;padding:9px 11px}}
+@media(prefers-reduced-motion:reduce){.cinematic-light,.portal-gate,.portal-gate:before,.portal-gate:after,.skyline-shimmer,.metric .glyph,.tech-orbit,.tech-orbit:before,.tech-orbit:after,.impact-mark,.fiction-card:before{animation:none!important}.motion-sky,.cursor-light{display:none!important}.universe-art{will-change:auto!important}.motion-enhanced .detail,.motion-enhanced .impact-card,.motion-enhanced .shelf-book,.motion-enhanced .fiction-card{transition:none!important}}body.motion-paused .motion-sky,body.motion-paused .cursor-light{display:none}body.motion-paused .cinematic-light,body.motion-paused .portal-gate,body.motion-paused .portal-gate:before,body.motion-paused .portal-gate:after,body.motion-paused .skyline-shimmer,body.motion-paused .metric .glyph,body.motion-paused .tech-orbit,body.motion-paused .tech-orbit:before,body.motion-paused .tech-orbit:after,body.motion-paused .impact-mark,body.motion-paused .fiction-card:before{animation:none!important}body.motion-paused .universe-art{transition:none!important}
